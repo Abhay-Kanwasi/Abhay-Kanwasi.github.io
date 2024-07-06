@@ -1,0 +1,54 @@
+.footer-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 8px; 
+}
+
+.footer-icon {
+  font-size: 0.8rem;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+.footer-icon .icon-text {
+  margin-left: 4px; 
+}
+
+@media (max-width: 600px) {
+  .footer-toolbar {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .footer-icons {
+    justify-content: center;
+  }
+
+  .footer-text {
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-appbar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 300px) {
+  .footer-appbar {
+    display: none !important;
+  }
+}

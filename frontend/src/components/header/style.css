@@ -1,74 +1,57 @@
-.header {
-    background-color: #fff;
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .header-content {
-    display: flex;
-    justify-content: space-between;
+.header-toolbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; 
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+}
+
+.header-icon {
+  margin-right: 8px;
+}
+
+.header-buttons {
+  display: flex;
+  gap: 16px; 
+}
+
+.header-theme {
+  display: flex;
+  align-items: center;
+  gap: 8px; 
+}
+
+.github-button {
+  border-radius: 20px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.github-icon {
+  margin-right: 8px;
+}
+
+@media (max-width: 600px) {
+  .header-toolbar.mobile {
+    flex-direction: column; 
     align-items: center;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    flex: 1;
-    text-align: left;
-  }
-  
-  .nav-links {
-    flex: 2;
-    text-align: center;
-  }
-  
-  .nav-links ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .nav-links li {
-    margin: 0 1rem;
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-  }
-  
-  .header-right {
-    display: flex;
+
+  .header-buttons.mobile {
+    flex-direction: column;
     align-items: center;
-    flex: 1;
-    justify-content: flex-end;
+    gap: 8px; 
   }
-  
-  .github-button {
-    background-color: #000;
-    border: none;
-    padding: 0.5rem;
-    border-radius: 4px;
-  }
-  
-  .github-button a {
-    display: flex;
+
+  .header-theme.mobile {
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    gap: 8px; 
   }
-  
-  .github-button img {
-    width: 24px;
-    height: 24px;
-    filter: invert(1); /* Invert color to white */
-  }
-  
-  .theme-toggle img {
-    width: 24px;
-    height: 24px;
-    margin-left: 1rem;
-  }
-  
+}

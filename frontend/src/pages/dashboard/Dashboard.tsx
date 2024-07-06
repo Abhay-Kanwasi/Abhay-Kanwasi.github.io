@@ -1,18 +1,22 @@
-import { Box } from "@mui/material"
-import Footer from "../../components/footer/Footer"
-import Header from "../../components/header/Header"
-import Home from "../../components/home/Home"
+import { Box } from "@mui/material";
+import Footer from "../../components/footer/Footer";
+import Header from "../../components/header/Header";
+import Home from "../../components/home/Home";
 
 const Dashboard = () => {
   return (
-    <>
-    <Box paddingTop="10px">
+    <Box 
+      display="flex" 
+      flexDirection="column" 
+      minHeight="100vh"
+    >
       <Header />
-      <Home />
+      <Box flexGrow={1}>
+        <Home />
+      </Box>
       <Footer />
     </Box>
-    </>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
