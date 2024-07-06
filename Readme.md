@@ -1,4 +1,4 @@
-# Project Template
+# Portfolio
 
 Welcome to the project! This project uses Django for the backend and React with Vite for the frontend.<br />
 
