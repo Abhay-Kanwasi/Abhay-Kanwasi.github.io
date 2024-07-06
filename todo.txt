@@ -1,0 +1,5 @@
+# TODO LIST
+
+Pending:
+
+Header and Footer should be outlined currenly they are just transparent
