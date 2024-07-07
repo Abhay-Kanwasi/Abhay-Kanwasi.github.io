@@ -1,0 +1,10 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+}
+
+.logo {
+    min-width: 100px; 
+    margin-right: 20px;
+}

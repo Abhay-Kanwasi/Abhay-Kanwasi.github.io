@@ -6,7 +6,7 @@ import Profile from "../../components/profile/Profile";
 import Connect_with_me from "../connect with me/Connect_with_me";
 import Articles from "../articles/Articles";
 import Experience from "../experience/Experience";
-import Projects from "../../components/projects/Projects";
+import Projects from "../projects/Projects";
 
 const Dashboard = () => {
   const [activeSection, setActiveSection] = useState<string>("profile");
@@ -27,7 +27,7 @@ const Dashboard = () => {
         onShowProfile={handleShowProfile}
       />
       <Box flexGrow={1}>
-        {activeSection === "profile" && <Profile />}
+        {activeSection === "profile" && <Profile onClickGetInTouch={handleConnectWithMe}/>}
         {activeSection === "projects" && <Projects />}
         {activeSection === "experience" && <Experience />}
         {activeSection === "articles" && <Articles />}

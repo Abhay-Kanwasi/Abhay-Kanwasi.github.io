@@ -7,7 +7,7 @@
 }
 
 .footer-text {
-  font-size: 0.9rem;
+  font-size: 0.7rem;
 }
 
 .footer-icons {
@@ -16,7 +16,7 @@
 }
 
 .footer-icon {
-  font-size: 0.8rem;
+  font-size: 0.2rem;
   padding: 6px;
   display: flex;
   align-items: center;
@@ -24,6 +24,8 @@
 
 .footer-icon .icon-text {
   margin-left: 4px; 
+  font-size: small;
+  color: grey;
 }
 
 @media (max-width: 600px) {

@@ -1,8 +1,15 @@
 import { Box, Button, Typography, Link, Container, Paper } from '@mui/material';
+import Profile_Cards from '../cardComponent/Profile_Card';
+import "./style.css"
 
-const Profile = () => {
+interface ProfileProps {
+    onClickGetInTouch: () => void;
+}
+
+const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
     return (
-        <Container maxWidth="sm" sx={{paddingTop: '100px'}}>
+        <>
+        <Container maxWidth="sm" sx={{paddingTop: '10px'}}>
             <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center" my={10}>
                 <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
                     <Paper 
@@ -35,7 +42,7 @@ const Profile = () => {
                     </Paper>
                 </Box>
                 <Box sx={{ textAlign: 'center', mt: 4 }}>
-                    <Typography variant="h3" fontWeight="bold" gutterBottom>
+                    <Typography variant="h4" fontWeight="bold" gutterBottom>
                         Hi there, I'm Abhay
                     </Typography>
                     <Box sx={{ textAlign: 'center' }}>
@@ -50,10 +57,8 @@ const Profile = () => {
                             as a Software Engineer, where I explore and contribute to building products.
                         </Typography>
                     </Box>
-
-
                     <Box mt={4}>
-                        <Button variant="contained" color="primary" sx={{ mr: 2 }}>
+                        <Button variant="contained" color="primary" sx={{ mr: 2 }} onClick={onClickGetInTouch}>
                             Get in touch
                         </Button>
                         <Button variant="outlined" href="https://github.com/Abhay-Kanwasi" target="_blank" rel="noopener noreferrer">
@@ -63,6 +68,8 @@ const Profile = () => {
                 </Box>
             </Box>
         </Container>
+        <Profile_Cards />
+        </>
     );
 };
 
