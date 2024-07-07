@@ -3,3 +3,4 @@
 Pending:
 
 Header and Footer should be outlined currenly they are just transparent
+Profile text needed to be styled

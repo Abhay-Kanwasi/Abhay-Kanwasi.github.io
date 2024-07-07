@@ -13,7 +13,15 @@ import { toggleTheme } from '../../store/theme/themeReducer';
 import NotesIcon from '@mui/icons-material/Notes';
 import "./style.css";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  onShowProjects: () => void;
+  onShowExperience: () => void;
+  onShowArticles: () => void;
+  onConnectWithMe: () => void;
+  onShowProfile: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ onShowProjects, onShowExperience, onShowArticles, onConnectWithMe, onShowProfile }) => {
   const dispatch = useDispatch();
   const mode = useSelector((state: RootState) => state.theme.mode);
   const theme = useTheme();
@@ -23,41 +31,30 @@ const Header: React.FC = () => {
     dispatch(toggleTheme());
   };
 
-  const handleProjects = () => {
-    // Implement functionality
-  }
-
-  const handleExperience = () => {
-    // Implement functionality
-  }
-
-  const handleArticles = () => {
-    // Implement functionality
-  }
-
-  const handleConnectWithMe = () => {
-    // Implement functionality
-  }
-
   return (
     <AppBar position="static" color="transparent" elevation={1}>
       <Toolbar className={`header-toolbar ${isMobile ? 'mobile' : ''}`}>
-        <Typography variant="h6" component="div" className="header-title">
-          <NotesIcon className="header-icon" />
-          Abhay Kanwasi
-        </Typography>
-        <Box className={`header-buttons ${isMobile ? 'mobile' : ''}`}>
-          <Button color="inherit" onClick={handleProjects}>
+      <Typography 
+        variant="h6" 
+        component="div" 
+        className="header-title" 
+        sx={{ fontWeight: 'bold', marginRight: '220px' }}
+      >
+        <NotesIcon className="header-icon" onClick={onShowProfile} />
+        Abhay Kanwasi
+      </Typography>
+        <Box className={`header-buttons ${isMobile ? 'mobile' : ''}`} sx={{ marginRight: '160px' }}>
+          <Button color="inherit" onClick={onShowProjects}>
             Projects
           </Button>
-          <Button color="inherit" onClick={handleExperience}>
+          <Button color="inherit" onClick={onShowExperience}>
             Experience
           </Button>
-          <Button color="inherit" onClick={handleArticles}>
+          <Button color="inherit" onClick={onShowArticles}>
             Articles
           </Button>
-          <Button color="inherit" onClick={handleConnectWithMe}>
-            Connect with me
+          <Button color="inherit" onClick={onConnectWithMe}>
+            Connect With Me
           </Button>
         </Box>
         <Box className={`header-theme ${isMobile ? 'mobile' : ''}`}>
