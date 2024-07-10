@@ -1,6 +1,5 @@
 import React from 'react';
-import { Box, Card, CardContent, Typography } from '@mui/material';
-
+import { Box, Typography, Stack } from '@mui/material';
 interface CardProps {
     logo: React.ReactNode;
     heading: string;
@@ -8,21 +7,19 @@ interface CardProps {
 }
 
 const CardComponent: React.FC<CardProps> = ({ logo, heading, description }) => {
-    return (
-        <Card>
-            <CardContent>
-                <Box display="flex" alignItems="flex-start">
-                    <Box mr={2} display="flex" alignItems="center">
-                    {logo}
-                    </Box>
-                    <Box>
-                    <Typography variant="h6" fontWeight={'bold'}>{heading}</Typography>
-                    <Typography variant="subtitle2" color={'grey'}>{description}</Typography>
-                    </Box>
-                </Box>
-            </CardContent>
-        </Card>
-    );
+  return (
+    <Box sx={{ padding: '20px', borderRadius: '8px' }}>
+      <Stack direction="row" alignItems="center" spacing={2}>
+        {logo}
+        <Typography variant="h6" sx={{ fontWeight: 'bold' }}>
+          {heading}
+        </Typography>
+      </Stack>
+      <Typography variant="body2" sx={{ marginTop: '10px' }}>
+        {description}
+      </Typography>
+    </Box>
+  );
 };
 
 export default CardComponent;

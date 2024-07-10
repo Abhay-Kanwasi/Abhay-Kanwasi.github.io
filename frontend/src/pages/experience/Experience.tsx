@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Container } from '@mui/material';
+import ExperienceCard from '../../components/cardComponent/Experiance_Card';
 
-const Experience = () => {
+const App: React.FC = () => {
   return (
-    <div>Experience</div>
-  )
-}
+    <Container>
+      <ExperienceCard />
+    </Container>
+  );
+};
 
-export default Experience
+export default App;

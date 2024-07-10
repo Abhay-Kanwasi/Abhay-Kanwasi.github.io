@@ -13,9 +13,9 @@ const Profile_Cards = () => {
         <Grid container spacing={4}>
           {/* First Grid */}
           <Grid item xs={12} sm={6}>
-            <div >
+            <div>
               <CardComponent
-                logo={<ExploreIcon fontSize='large' sx={{color: 'limegreen'}}/>}
+                logo={<ExploreIcon fontSize='large' sx={{ color: 'limegreen' }} />}
                 heading="Explore Projects"
                 description="Building hobby projects while learning new technologies is something I do quite often and I would love if you explored them."
               />
@@ -24,9 +24,9 @@ const Profile_Cards = () => {
 
           {/* Second Grid */}
           <Grid item xs={12} sm={6}>
-            <div >
+            <div>
               <CardComponent
-                logo={<CodeIcon fontSize='large' sx={{color: 'limegreen'}}/>}
+                logo={<CodeIcon fontSize='large' sx={{ color: 'limegreen' }} />}
                 heading="Coding and Development"
                 description="I occasionally involve myself in problem-solving on different coding platforms to refresh my knowledge. Checkout my coding profiles."
               />
@@ -38,9 +38,9 @@ const Profile_Cards = () => {
         <Grid container spacing={4}>
           {/* First Grid */}
           <Grid item xs={12} sm={6}>
-            <div >
+            <div>
               <CardComponent
-                logo={<WorkIcon fontSize='large' sx={{color: 'limegreen'}}/>}
+                logo={<WorkIcon fontSize='large' sx={{ color: 'limegreen' }} />}
                 heading="Work Experience"
                 description="Building hobby projects while learning new technologies is something I do quite often and I would love if you explored them."
               />
@@ -49,9 +49,9 @@ const Profile_Cards = () => {
 
           {/* Second Grid */}
           <Grid item xs={12} sm={6}>
-            <div >
+            <div>
               <CardComponent
-                logo={<ShareIcon fontSize='large' sx={{color: 'limegreen'}}/>}
+                logo={<ShareIcon fontSize='large' sx={{ color: 'limegreen' }} />}
                 heading="Connect with me"
                 description="I occasionally involve myself in problem-solving on different coding platforms to refresh my knowledge. Checkout my coding profiles."
               />
