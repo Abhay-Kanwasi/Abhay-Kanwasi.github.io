@@ -28,15 +28,15 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <Box sx={{ paddingLeft: 45, paddingRight: 45 }}>
-      <Typography variant="h4" gutterBottom>
+    <Box sx={{ padding: '20px', paddingLeft: 45, paddingRight: 45, paddingTop: '50px' }}>
+      <Typography variant="h5" sx={{ marginBottom: '20px', fontWeight: 'bold', padding: '20px' }}>
         My Projects
       </Typography>
       <Grid container justifyContent="center">
         {projects.map((project, index) => (
           <Grid item xs={12} sm={6} md={4} key={index} sx={{ padding: 1 }}>
             <ProjectCard {...project} />
-          </Grid>
+          </Grid> 
         ))}
       </Grid>
     </Box>
