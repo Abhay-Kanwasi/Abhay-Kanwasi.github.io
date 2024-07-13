@@ -10,7 +10,7 @@ const Profile_Cards = () => {
   return (
     <>
       <Container maxWidth="md" sx={{ display: 'flex', justifyContent: 'center' }}>
-        <Grid container spacing={2}>
+        <Grid container spacing={1}>
           {/* First Grid */}
           <Grid item xs={12} sm={6}>
             <CardComponentWrapper>

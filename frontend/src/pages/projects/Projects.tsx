@@ -28,7 +28,7 @@ const projects = [
 
 const Projects: React.FC = () => {
   return (
-    <Box sx={{ padding: '20px', paddingLeft: 45, paddingRight: 45, paddingTop: '50px' }}>
+    <Box sx={{ padding: '20px', paddingLeft: 50, paddingRight: 50, paddingTop: '30px' }}>
       <Typography variant="h5" sx={{ marginBottom: '20px', fontWeight: 'bold', padding: '20px' }}>
         My Projects
       </Typography>

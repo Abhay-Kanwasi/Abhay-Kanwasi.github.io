@@ -38,7 +38,8 @@ const Header: React.FC<HeaderProps> = ({ onShowProjects, onShowExperience, onSho
         variant="h6" 
         component="div" 
         className="header-title" 
-        sx={{ fontWeight: 'bold', marginRight: '220px' }}
+        sx={{ fontWeight: 'bold', marginRight: '220px', cursor: 'pointer', }}
+        onClick={onShowProfile}
       >
         <NotesIcon className="header-icon" onClick={onShowProfile} />
         Abhay Kanwasi

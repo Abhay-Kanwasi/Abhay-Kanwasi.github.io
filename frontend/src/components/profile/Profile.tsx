@@ -42,15 +42,15 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
                             </Button>
                         </Paper>
                     </Box>
-                    <Box sx={{ textAlign: 'center', mt: 4 }}>
-                        <Typography variant="h4" fontWeight="bold" gutterBottom>
+                    <Box sx={{ textAlign: 'center'}}>
+                        <Typography variant="h3" fontWeight="bold" gutterBottom>
                             Hi there, I'm Abhay
                         </Typography>
                         <Box sx={{ textAlign: 'center' }}>
                             <Typography variant="body1" gutterBottom color="textSecondary" fontWeight="bold">
                                 I am a computer science engineer from Uttarakhand, India.
                             </Typography>
-                            <Typography variant="body1" gutterBottom color="textSecondary" fontWeight="bold">
+                            <Typography variant="body1" gutterBottom color="textSecondary">
                                 Currently, I work at{' '}
                                 <Link href="https://www.hobbiate.com/" target="_blank" rel="noopener noreferrer">
                                     Hobbiate Technologies
@@ -70,7 +70,7 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
                 </Box>
             </Container>
         </Box>
-            <Profile_Cards />
+        <Profile_Cards />
         </>
     );
 };
