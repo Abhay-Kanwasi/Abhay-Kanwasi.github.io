@@ -26,7 +26,7 @@ const Dashboard = () => {
         onConnectWithMe={handleConnectWithMe}
         onShowProfile={handleShowProfile}
       />
-      <Box flexGrow={1}>
+      <Box flexGrow={1} mt={2}>
         {activeSection === "profile" && <Profile onClickGetInTouch={handleConnectWithMe}/>}
         {activeSection === "projects" && <Projects />}
         {activeSection === "experience" && <Experience />}

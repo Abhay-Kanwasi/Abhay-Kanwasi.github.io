@@ -40,7 +40,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, te
           color="primary"
           href={liveLink}
           target="_blank"
-          sx={{ marginTop: 2, borderRadius: 3 }}
+          sx={{ marginTop: 2, borderRadius: 3, textTransform: 'none' }}
         >
           Watch Live
         </Button>

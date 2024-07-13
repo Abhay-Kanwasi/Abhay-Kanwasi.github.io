@@ -10,7 +10,7 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
     return (
         <>
         <Box sx={{ paddingLeft: 45, paddingRight: 45 }}>
-            <Container maxWidth="sm" sx={{paddingTop: '10px'}}>
+            <Container maxWidth="sm">
                 <Box display="flex" flexDirection="column" alignItems="center" justifyContent="center" textAlign="center" my={10}>
                     <Box display="flex" alignItems="center" justifyContent="center" mb={2}>
                         <Paper 
@@ -20,7 +20,7 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
                                 alignItems: 'center', 
                                 px: 2, 
                                 py: 1, 
-                                borderRadius: '20px',
+                                borderRadius: '15px',
                                 cursor: 'pointer'
                             }}
                         >
@@ -69,8 +69,8 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
                     </Box>
                 </Box>
             </Container>
-            <Profile_Cards />
         </Box>
+            <Profile_Cards />
         </>
     );
 };
