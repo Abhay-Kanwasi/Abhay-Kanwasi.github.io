@@ -8,7 +8,7 @@ const projects = [
     title: 'CodeInBrowser',
     description: 'This application allows you to write and run code snippets in various programming languages',
     technologies: ['React', 'Node.js', 'Chakra UI', 'Monaco Editor'],
-    liveLink: 'https://github.com/Abhay-Kanwasi/CodeInBrowser',
+    liveLink: 'https://browser-code-editor-eight.vercel.app/',
   },
   {
     image: './src/assets/AI Blog Generator.jpeg',
