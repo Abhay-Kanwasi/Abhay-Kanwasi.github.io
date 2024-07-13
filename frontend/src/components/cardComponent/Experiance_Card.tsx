@@ -7,20 +7,20 @@ const ExperienceCard: React.FC = () => {
     {
       role: 'Software Engineer',
       period: 'October, 2023 - Present',
-      description: 'Involved in the development of core features for the product and worked on the development of the Storage accounts and CQL(cosmocloud query language) feature.',
-      skills: ['Python', 'Git', 'NextJS', 'Django', 'ChakraUI', 'MongoDB', 'PostgreSQL']
+      description: 'Created a responsive and user-friendly chat interface, incorporating real-time message processing, history management, and UI/UX improvements. Built comprehensive forms and dashboards for data entry and visualization, ensuring efficient data retrieval and display for various user-driven actions and configurations. Designed and implemented user interface components and backend services for dynamic content management, including user profiles, logging, and resource management.',
+      skills: ['Python', 'Git', 'NextJS', 'Django', 'ChakraUI', 'MongoDB', 'PostgreSQL', 'LDAP']
     },
     {
       role: 'Software Engineer Intern',
       period: 'July, 2023 - October, 2023',
-      description: 'Worked on development of Environments and Secrets feature for the product to streamline API development and testing easier for end user.',
+      description: 'Gained proficiency in Django ORM, including implementing and querying complex relationships and conducted unit testing to ensure data integrity. Improved the user interface and user experience by resolving key front-end issues, contributing to a smooth and reliable application experience.',
       skills: ['ReactJS', 'Postgres', 'Django', 'Git', 'Ubuntu', 'BitBucket', 'ORM']
     }
   ];
 
   return (
     <Box sx={{ padding: '20px', paddingTop: '50px' }}>
-      <Typography variant="h5" sx={{ marginBottom: '20px', fontWeight: 'bold', padding: '20px' }}>
+      <Typography variant="h5" sx={{ fontWeight: 'bold', padding: '20px' }}>
         My recent experience
       </Typography>
       <Grid container spacing={2}>
@@ -33,9 +33,6 @@ const ExperienceCard: React.FC = () => {
                   padding: '8px 16px',
                   borderRadius: '6px',
                   cursor: 'pointer',
-                  '&:hover': {
-                    backgroundColor: '#FFF1F2',
-                  },
                 }}
               >
                 <Typography
@@ -53,7 +50,7 @@ const ExperienceCard: React.FC = () => {
               Hobbiate is a startup and fintech solution company. It undertake application development for cutting edge technologies that relate to FinTech, Artificial Intelligence, LLMs, GPT, Data Science, Data Analytics, Data Engineering and Machine Learning.
               It specialise in Python stacks, Cloud Management, and DevOps; and have full understanding of SDLC and Agile Development Methodologies.
              </Typography>
-            <Link href="#" underline="hover" sx={{ color: 'inherit' }}>
+            <Link href="#" underline="hover" sx={{ color: 'inherit', fontWeight: 'bold' }}>
               Checkout website to learn more &gt;
             </Link>
           </Box>

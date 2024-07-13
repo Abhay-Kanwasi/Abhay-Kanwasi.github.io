@@ -47,6 +47,7 @@ const ContactForm: React.FC = () => {
             color: '#00a3cc',
           },
         }}
+        href='https://www.linkedin.com/in/abhay-kanwasi/'
         startIcon={<LinkedInIcon />}
         fullWidth
       >
@@ -63,11 +64,11 @@ const ContactForm: React.FC = () => {
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
         }}
       >
-        <Typography variant="h6" sx={{ marginBottom: '10px', fontSize: '1rem', fontWeight: 'bold' }}>
+        <Typography variant="h6" sx={{ fontSize: '1rem', fontWeight: 'bold' }}>
           Send me a Message
         </Typography>
 
-        <Typography variant="body1" sx={{ marginBottom: '10px', fontSize: '0.8rem' }}>
+        <Typography variant="body1" sx={{ marginBottom: '20px', fontSize: '0.8rem' }}>
           Want to connect with me? Hit me a message below and get instant replies
         </Typography>
 
