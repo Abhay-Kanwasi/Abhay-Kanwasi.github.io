@@ -6,4 +6,5 @@ Header and Footer should be outlined currenly they are just transparent
 Profile text needed to be styled
 Header should be more responsive most likely options will be show after clicking on icon if zoom too much 
 Footer should be adjusted not come before screen
-In dark mode footer is looking ugly
+In dark mode footer is looking ugly.
+On hover in articles background color of articles is not good at all.
