@@ -19,7 +19,7 @@ const ExperienceCard: React.FC = () => {
   ];
 
   return (
-    <Box sx={{ padding: '20px', paddingTop: '50px' }}>
+    <Box sx={{paddingTop: '50px' }}>
       <Typography variant="h5" sx={{ fontWeight: 'bold', padding: '20px' }}>
         My recent experience
       </Typography>
@@ -46,7 +46,7 @@ const ExperienceCard: React.FC = () => {
                 </Typography>
               </Box>
             </Stack>
-            <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+            <Typography variant="body1" sx={{ marginBottom: '10px', color: 'grey' }}>
               Hobbiate is a startup and fintech solution company. It undertake application development for cutting edge technologies that relate to FinTech, Artificial Intelligence, LLMs, GPT, Data Science, Data Analytics, Data Engineering and Machine Learning.
               It specialise in Python stacks, Cloud Management, and DevOps; and have full understanding of SDLC and Agile Development Methodologies.
              </Typography>
@@ -65,12 +65,12 @@ const ExperienceCard: React.FC = () => {
                   <Typography variant="body2" sx={{ color: '#50B468' }}>{experience.period}</Typography>
                 </Box>
               </Stack>
-              <Typography variant="body1" sx={{ marginBottom: '10px' }}>
+              <Typography variant="body1" sx={{ marginBottom: '10px', paddingLeft: '50px', color: 'grey', fontSize: '1.2rem' }}>
                 {experience.description}
               </Typography>
-              <Stack direction="row" spacing={1}>
+              <Stack direction="row" spacing={1} sx={{ paddingLeft: '50px'}}>
                 {experience.skills.map((skill, skillIndex) => (
-                  <Chip key={skillIndex} label={skill} sx={{ backgroundColor: 'inherit' }} />
+                  <Chip key={skillIndex} label={skill} sx={{ backgroundColor: 'inherit', color: 'inherit', fontWeight: 'bold' }} />
                 ))}
               </Stack>
             </Box>

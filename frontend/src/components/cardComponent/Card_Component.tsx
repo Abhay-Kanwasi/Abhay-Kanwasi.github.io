@@ -15,7 +15,7 @@ const CardComponent: React.FC<CardProps> = ({ logo, heading, description }) => {
           {heading}
         </Typography>
       </Stack>
-      <Typography variant="body2" sx={{ marginTop: '10px' }}>
+      <Typography variant="body1" sx={{ marginTop: '10px', paddingLeft: '50px', color: 'grey' }}>
         {description}
       </Typography>
     </Box>
