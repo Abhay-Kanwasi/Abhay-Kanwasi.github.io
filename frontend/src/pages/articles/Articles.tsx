@@ -1,6 +1,6 @@
-// src/Articles.tsx
 import React from 'react';
-import { Container, Typography, Box, Link, Divider } from '@mui/material';
+import { Container, Typography, Box, Link } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 
 const articles = [
   {
@@ -24,8 +24,11 @@ const articles = [
 ];
 
 const Articles: React.FC = () => {
+  const theme = useTheme();
+  const hoverBackgroundColor = theme.palette.mode === 'dark' ? '#333333' : '#FFFDD0';
+
   return (
-    <Container sx={{paddingTop: '50px'}}>
+    <Container sx={{ paddingTop: '50px' }}>
       <Typography variant="h5" sx={{ fontWeight: 'bold', padding: '20px', paddingBottom: '2px' }}>Latest Articles</Typography>
       <Typography variant="h6" sx={{ marginBottom: '10px', color: 'grey', padding: '20px', paddingTop: '0' }}>
         I love to write about stuff that I learn. Here are some of my latest articles.
@@ -33,7 +36,7 @@ const Articles: React.FC = () => {
       <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', ml: 3, paddingLeft: '100px', paddingTop: '50px', gap: '20px' }}>
         {articles.map((article, index) => (
           <Box key={index} sx={{ display: 'flex', mb: 3 }}>
-            <Box sx={{ minWidth: '150px', textAlign: 'right', pr: 2, paddingRight: '70px'}}>
+            <Box sx={{ minWidth: '150px', textAlign: 'right', pr: 2, paddingRight: '70px' }}>
               <Typography variant="body2" color="textSecondary" fontSize='1.1rem'>{article.date}</Typography>
             </Box>
             <Box sx={{ display: 'flex', flexDirection: 'column', position: 'relative', alignItems: 'center', marginRight: 2 }}>
@@ -54,10 +57,10 @@ const Articles: React.FC = () => {
             <Box
               sx={{
                 flex: 1,
-                padding: '20px', 
+                padding: '20px',
                 cursor: 'pointer',
                 '&:hover': {
-                  backgroundColor: '#16A34A',
+                  backgroundColor: hoverBackgroundColor,
                   borderRadius: '20px',
                 },
               }}

@@ -70,7 +70,7 @@ const Profile: React.FC<ProfileProps> = ({onClickGetInTouch}) => {
                 </Box>
             </Container>
         </Box>
-        <Box sx={{ paddingLeft: 65, paddingRight: 65 }}>
+        <Box sx={{ paddingLeft: 55, paddingRight: 55 }}>
             <Profile_Cards />
         </Box>
         </>
