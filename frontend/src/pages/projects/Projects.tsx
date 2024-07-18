@@ -23,33 +23,33 @@ const projects = [
     image: './src/assets/Movie recommender system.png',
     title: 'Movie Recommender System',
     description: "Preprocesses movie data, vectorizes text using Bag of Words, and calculates cosine distances to recommend the top 5 similar movies, enhancing user experience with personalized suggestions.",
-    technologies: ['Python', 'Tailwind CSS', 'Django', 'Streamlit', 'JavaScript'],
+    technologies: ['Python', 'Pandas', 'Sklearn', 'Streamlit', 'Nltk'],
     liveLink: 'https://example.com/shopper',
     sourceCodeLink: 'https://github.com/Abhay-Kanwasi/ML-Learning/tree/main/Projects/Movie%20Recommender%20System'
   },
   {
-    image: './src/assets/AI Blog Generator.jpeg',
-    title: 'AI Blog Generator',
-    description: 'Provide users with AI-generated blog posts summarizing the content of YouTube videos.',
+    image: './src/assets/Puddle.png',
+    title: 'Puddle - Online Marketplace Project',
+    description: 'Online marketplace provides secure user authentication, seamless product management, efficient search functionality, and an intuitive messaging system for direct communication between sellers and users.',
     technologies: ['Python', 'Tailwind CSS', 'Django', 'JavaScript'],
     liveLink: 'https://example.com/shopper',
-    sourceCodeLink: ''
+    sourceCodeLink: 'https://github.com/Abhay-Kanwasi/Puddle'
   },
   {
-    image: './src/assets/AI Blog Generator.jpeg',
-    title: 'AI Blog Generator',
-    description: 'Provide users with AI-generated blog posts summarizing the content of YouTube videos.',
+    image: './src/assets/wetherapplication.jpg',
+    title: 'Weather App',
+    description: 'A Wheather app using Django framework and API name OpenWeather which will compare the weather of the given 2 cities. We will be using request to fetch the data from the OpenWether API',
     technologies: ['Python', 'Tailwind CSS', 'Django', 'JavaScript'],
     liveLink: 'https://example.com/shopper',
-    sourceCodeLink: ''
+    sourceCodeLink: 'https://github.com/Abhay-Kanwasi/Wether-Application'
   },
   {
-    image: './src/assets/AI Blog Generator.jpeg',
-    title: 'AI Blog Generator',
-    description: 'Provide users with AI-generated blog posts summarizing the content of YouTube videos.',
+    image: './src/assets/ShoppinglyX.jpg',
+    title: 'ShoppinglyX',
+    description: 'Shopping website that enables users to browse and purchase products online. It features user authentication, product listings, a shopping cart, and order placement functionality. Explore and shop for a wide range of products seamlessly on this platform.',
     technologies: ['Python', 'Tailwind CSS', 'Django', 'JavaScript'],
     liveLink: 'https://example.com/shopper',
-    sourceCodeLink: ''
+    sourceCodeLink: 'https://github.com/Abhay-Kanwasi/Full-stack-Ecommerce-Website/'
   },
 ];
 
