@@ -72,37 +72,41 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ image, title, description, te
               <MoreVertIcon fontSize="small" />
             </IconButton>
             <Menu
-                  id="long-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  PaperProps={{
-                    style: {
-                      maxHeight: 160,
-                      borderRadius: '8px',
-                      padding: '8px',
-                      overflow: 'auto',
-                    },
+              id="long-menu"
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              PaperProps={{
+                style: {
+                  maxHeight: 160,
+                  borderRadius: '8px',
+                  padding: '8px',
+                  overflow: 'auto',
+                },
+              }}
+              disableScrollLock
+            >
+              <Typography sx={{ fontSize: '1.0rem', p: 1, fontWeight: 'bold' }}>
+                Source Code
+              </Typography>
+              <Typography variant={'body2'} sx={{ fontSize: '0.8rem', p: 1, color: 'secondary' }}>
+                Want to explore source code?
+              </Typography>
+              <MenuItem onClick={handleClose} sx={{ p: 1 }}>
+                <Box
+                  component="a"
+                  href={sourceCodeLink}
+                  target="_blank"
+                  sx={{
+                    border: '1px solid #ccc',
+                    borderRadius: '4px',
+                    padding: '4px',
+                    cursor: 'pointer',
+                    textDecoration: 'underline',
+                    color: '#22C55E',
                   }}
-                  disableScrollLock
                 >
-                  <Typography sx={{ fontSize: '1.0rem', p: 1, fontWeight: 'bold' }}>
-                    Source Code
-                  </Typography>
-                  <Typography variant={'body2'} sx={{ fontSize: '0.8rem', p: 1, color: 'secondary' }}>
-                    Want to explore source code ?
-                  </Typography>
-                  <MenuItem onClick={handleClick} sx={{ p: 1 }}>
-                    <Box
-                      sx={{
-                        border: '1px solid #ccc',
-                        borderRadius: '4px',
-                        padding: '4px',
-                        cursor: 'pointer',
-                        textDecoration: 'underline',
-                      }}
-                    >
-                  <Typography variant="body2" component="div" color="#22C55E">
+                  <Typography variant="body2" component="div">
                     {sourceCodeLink}
                   </Typography>
                 </Box>
