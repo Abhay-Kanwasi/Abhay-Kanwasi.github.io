@@ -2,14 +2,14 @@ import React, { useState } from 'react';
 import { Container, Typography, Box, Button, Link } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import July_8_Article from '../../components/articles/July_8_Article';
+import July_20_Article from '../../components/articles/July_20_Article';
 
 const articles = [
   {
-    date: '20th May, 2024',
-    title: 'Lets see what we can do with rehype pretty code',
-    description: 'Syntax highlighting, line numbers, line highlights, word highlights',
-    component: July_8_Article
+    date: '18th July, 2024',
+    title: 'Exception Handling in Python',
+    description: 'How exceptions handled in python using try, catch and finally with code examples',
+    component: July_20_Article
   },
   {
     date: '11th May, 2024',

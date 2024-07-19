@@ -10,7 +10,7 @@ import "./style.css";
 
 const Footer: React.FC = () => {
   return (
-    <AppBar position="fixed" color="inherit" elevation={1} className="footer-appbar" sx={{ top: 'auto', bottom: 0 }}>
+    <AppBar position="fixed" color="inherit" elevation={1} className="footer-appbar" sx={{ top: 'auto', bottom: 0, backgroundColor: 'transparent' }}>
       <Toolbar className="footer-toolbar" style={{ marginTop: 'auto' }}>
         <Typography variant="body1" color="textSecondary" className="footer-text">
           &copy; {new Date().getFullYear()} Abhay Kanwasi
