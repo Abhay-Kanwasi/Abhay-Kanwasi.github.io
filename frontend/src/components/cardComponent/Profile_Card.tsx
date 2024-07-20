@@ -19,8 +19,8 @@ const Profile_Cards = () => {
     else if(action == 'work_experience'){
       navigate('/experience')
     }
-    else if(action == 'connect'){
-      console.log(action)
+    else if(action == 'connect_with_me'){
+      navigate('/connect-with-me')
     }
   };
 
@@ -63,7 +63,7 @@ const Profile_Cards = () => {
 
           {/* Fourth Grid */}
           <Grid item xs={12} md={6}>
-            <CardComponentWrapper onClick={() => handleCardClick('connect')}>
+            <CardComponentWrapper onClick={() => handleCardClick('connect_with_me')}>
               <CardComponent
                 logo={<ShareIcon fontSize='large' sx={{ color: '#22C55E' }} />}
                 heading="Connect with me"
