@@ -14,7 +14,7 @@ const Profile_Cards = () => {
       navigate('/projects');
     }
     else if(action == 'coding'){
-      console.log(action) 
+      navigate('/coding-profiles') 
     }
     else if(action == 'work_experience'){
       navigate('/experience')
