@@ -1,8 +1,12 @@
-import React from "react";
+import { ReactNode } from "react";
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({ children }) {
-    const auth = JSON.parse(localStorage.getItem("auth"));
+interface ProtectedRouteProps {
+    children: ReactNode; 
+}
+
+function ProtectedRoute({ children }: ProtectedRouteProps) {
+    const auth = JSON.parse(localStorage.getItem("auth") || '{}'); 
     return auth && auth.access ? <>{children}</> : <Navigate to="/login/" />;
 }
 
