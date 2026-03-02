@@ -1,20 +1,33 @@
-import AppRoutes from './routes/AppRouts';
-import { Provider } from 'react-redux';
-import { store, persistor } from './store/store';
-import { PersistGate } from 'redux-persist/integration/react';
-import ThemeContextProvider from './themeprovider/ThemeContent';
-// import '@fontsource/anton';
+import { useState } from 'react'
+import Terminal from './components/Terminal'
+import Navbar from './components/Navbar'
+import Hero from './components/Hero'
+import TechStack from './components/TechStack'
+import Projects from './components/Projects'
+import Experience from './components/Experience'
+import Articles from './components/Articles'
+import Contact from './components/Contact'
+import Footer from './components/Footer'
 
-function App() {
+export default function App() {
+  const [mode, setMode] = useState<'terminal' | 'gui'>('terminal')
+
+  if (mode === 'terminal') {
+    return <Terminal onSwitchToGui={() => setMode('gui')} />
+  }
+
   return (
-    <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
-        <ThemeContextProvider>
-            <AppRoutes />
-        </ThemeContextProvider>
-      </PersistGate>
-  </Provider>
+    <div className="relative min-h-screen">
+      <Navbar onSwitchToTerminal={() => setMode('terminal')} />
+      <main>
+        <Hero />
+        <TechStack />
+        <Projects />
+        <Experience />
+        <Articles />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   )
 }
-
-export default App
