@@ -1,18 +1,17 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { ArrowLeft, ExternalLink } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-// import { articles } from '../data/content'  // replaced by live Medium feed
-import { profile } from '../data/content'
+import { articles as hardcodedArticles, profile } from '../data/content'
 import SectionReveal from './SectionReveal'
 import { useArticles } from '../context/ArticlesContext'
 import DOMPurify from 'dompurify'
 
-// const articleComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
-//   'exception-handling-python': lazy(() => import('./articles/ExceptionHandlingArticle')),
-//   'google-auth-jwt-django-react': lazy(() => import('./articles/GoogleAuthArticle')),
-//   'deploying-django-rocky-linux': lazy(() => import('./articles/DeployingDjangoArticle')),
-//   'configurable-storage-django': lazy(() => import('./articles/ConfigurableStorageArticle')),
-// }
+const articleComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
+  'exception-handling-python': lazy(() => import('./articles/ExceptionHandlingArticle')),
+  'google-auth-jwt-django-react': lazy(() => import('./articles/GoogleAuthArticle')),
+  'deploying-django-rocky-linux': lazy(() => import('./articles/DeployingDjangoArticle')),
+  'configurable-storage-django': lazy(() => import('./articles/ConfigurableStorageArticle')),
+}
 
 function getSlugFromUrl(): string | null {
   if (typeof window === 'undefined') return null
@@ -26,6 +25,12 @@ function stripHtml(html: string): string {
 export default function Articles() {
   const { articles, loading, error, stale } = useArticles()
   const [selectedSlug, setSelectedSlug] = useState<string | null>(getSlugFromUrl)
+
+  // When RSS fails with no cache, fall back to the hardcoded list
+  const isFallback = !loading && !!error && !articles
+  const displayArticles = isFallback
+    ? hardcodedArticles.map((a) => ({ ...a, slug: a.id, pubDate: a.date, description: a.description, content: '' }))
+    : articles
 
   useEffect(() => {
     function onPopState() {
@@ -60,6 +65,34 @@ export default function Articles() {
       )
     }
 
+    // Hardcoded TSX component takes priority if it exists for this slug
+    const HardcodedComponent = articleComponents[selectedSlug]
+    if (HardcodedComponent) {
+      return (
+        <section id="articles" className="px-6 py-28">
+          <div className="mx-auto max-w-3xl">
+            <button
+              onClick={closeArticle}
+              className="mb-8 inline-flex items-center gap-2 rounded px-3 py-2 font-mono text-sm text-slate-500 transition-colors duration-200 hover:bg-slate-800/70 hover:text-slate-200"
+            >
+              <ArrowLeft size={14} />
+              cd ../articles
+            </button>
+            <Suspense
+              fallback={
+                <div className="py-20 text-center font-mono text-sm text-slate-500">
+                  loading...
+                </div>
+              }
+            >
+              <HardcodedComponent />
+            </Suspense>
+          </div>
+        </section>
+      )
+    }
+
+    // Live RSS article
     const selectedArticle = articles?.find((a) => a.slug === selectedSlug)
 
     if (!selectedArticle) {
@@ -154,9 +187,9 @@ export default function Articles() {
             {loading && (
               <p className="font-mono text-sm text-slate-500">loading...</p>
             )}
-            {error && (
-              <p className="font-mono text-sm text-red-400">
-                Failed to load articles. Please try again later.
+            {isFallback && (
+              <p className="mb-4 font-mono text-xs text-slate-600">
+                (showing cached articles — feed unavailable)
               </p>
             )}
             {stale && (
@@ -166,7 +199,7 @@ export default function Articles() {
             )}
 
             <div className="space-y-3">
-              {articles?.map((article, i) => (
+              {displayArticles?.map((article, i) => (
                 <SectionReveal key={article.id} delay={i * 0.08}>
                   <button
                     onClick={() => openArticle(article.slug)}
@@ -189,7 +222,7 @@ export default function Articles() {
               ))}
             </div>
 
-            <SectionReveal delay={(articles?.length ?? 0) * 0.08 + 0.1}>
+            <SectionReveal delay={(displayArticles?.length ?? 0) * 0.08 + 0.1}>
               <div className="mt-8">
                 <a
                   href={profile.medium}
