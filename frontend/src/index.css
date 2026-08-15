@@ -51,3 +51,45 @@ body::before {
 ::-webkit-scrollbar-thumb:hover {
   background: #334155;
 }
+
+.medium-article {
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.8;
+  color: #cbd5e1;
+  font-family: 'Inter', system-ui, sans-serif;
+}
+.medium-article h1,
+.medium-article h2,
+.medium-article h3,
+.medium-article h4 {
+  color: #e2e8f0;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.medium-article p {
+  margin-bottom: 1em;
+}
+.medium-article a {
+  color: #22d3ee;
+}
+.medium-article img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+.medium-article pre {
+  overflow-x: auto;
+  background: #1e293b;
+  padding: 1em;
+  border-radius: 8px;
+}
+.medium-article code {
+  background: #1e293b;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.875em;
+}
+.medium-article pre code {
+  background: none;
+  padding: 0;
+}
