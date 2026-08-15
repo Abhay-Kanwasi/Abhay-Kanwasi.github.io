@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { ArticlesProvider } from './context/ArticlesContext'
 import Terminal from './components/Terminal'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
@@ -17,6 +18,7 @@ export default function App() {
   }
 
   return (
+    <ArticlesProvider>
     <div className="relative min-h-screen">
       <Navbar onSwitchToTerminal={() => setMode('terminal')} />
       <main>
@@ -29,5 +31,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </ArticlesProvider>
   )
 }
