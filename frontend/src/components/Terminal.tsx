@@ -353,18 +353,29 @@ function renderProjectReadme(project: (typeof projects)[number]): React.ReactNod
   return (
     <div className="text-slate-400">
       <p className="font-bold text-cyan-400"># {project.className}</p>
-      <p className="mt-1 leading-relaxed text-emerald-400/80">{project.description}</p>
+      <ul className="mt-1 list-none space-y-1">
+        {project.bullets.map((b, i) => (
+          <li key={i} className="flex gap-2 leading-relaxed text-emerald-400/80">
+            <span className="mt-1 shrink-0 text-emerald-500">•</span>
+            <span>{b}</span>
+          </li>
+        ))}
+      </ul>
       <p className="mt-3 text-slate-500">## Stack</p>
       <p className="text-amber-300">[{project.stack.map((t) => `"${t}"`).join(', ')}]</p>
       <div className="mt-3 space-y-0.5">
-        <p>
-          <span className="text-slate-500">demo:   </span>
-          <Link href={project.liveLink}>{project.liveLink}</Link>
-        </p>
-        <p>
-          <span className="text-slate-500">source: </span>
-          <Link href={project.sourceCode}>{project.sourceCode}</Link>
-        </p>
+        {project.liveLink && (
+          <p>
+            <span className="text-slate-500">demo:   </span>
+            <Link href={project.liveLink}>{project.liveLink}</Link>
+          </p>
+        )}
+        {project.sourceCode && (
+          <p>
+            <span className="text-slate-500">source: </span>
+            <Link href={project.sourceCode}>{project.sourceCode}</Link>
+          </p>
+        )}
       </div>
     </div>
   )
