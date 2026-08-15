@@ -1,13 +1,36 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import { profile } from '../data/content'
 import SectionReveal from './SectionReveal'
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setStatus('sending')
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        { title: form.name, name: form.name, email: form.email, message: form.message, time: new Date().toLocaleString() },
+        EMAILJS_PUBLIC_KEY,
+      )
+      setStatus('success')
+      setForm({ name: '', email: '', message: '' })
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -65,7 +88,7 @@ export default function Contact() {
 
             <form
               className="space-y-4 p-5"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <p className="text-slate-600"># drop a message below</p>
 
@@ -105,13 +128,21 @@ export default function Contact() {
                 />
               </div>
 
+              {status === 'success' && (
+                <p className="text-emerald-400">{'>>> '}message sent successfully ✓</p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400">{'>>> '}error: failed to send. try again.</p>
+              )}
+
               <motion.button
                 whileHover={{ scale: 1.01 }}
                 whileTap={{ scale: 0.99 }}
                 type="submit"
-                className="w-full rounded border border-cyan-500/30 bg-cyan-500/10 px-4 py-2.5 text-cyan-400 transition-all duration-200 hover:border-cyan-400/50 hover:bg-cyan-500/20"
+                disabled={status === 'sending'}
+                className="w-full rounded border border-cyan-500/30 bg-cyan-500/10 px-4 py-2.5 text-cyan-400 transition-all duration-200 hover:border-cyan-400/50 hover:bg-cyan-500/20 disabled:opacity-50"
               >
-                {'>>> '}send_message()
+                {status === 'sending' ? '>>> sending...' : '>>> send_message()'}
               </motion.button>
             </form>
           </div>
