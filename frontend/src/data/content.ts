@@ -44,53 +44,67 @@ export const techStack = [
 
 export const projects = [
   {
-    className: 'CodeInBrowser',
-    description:
-      'Write and run code snippets in various programming languages directly in the browser. Selecting a language provides a sample program to get started.',
-    stack: ['React', 'Node.js', 'Chakra UI', 'Monaco Editor', 'TailwindCSS'],
-    liveLink: 'https://browser-code-editor-eight.vercel.app/',
-    sourceCode: 'https://github.com/Abhay-Kanwasi/code-in-browser',
+    className: 'VzureInnovationAccelerator',
+    bullets: [
+      'Built a secure upgrade system with signature validation, decryption, and automated application upgrade.',
+      'Integrated LDAP and Active Directory authentication with configurable settings, real-time connection testing, and comprehensive frontend and backend test cases.',
+    ],
+    stack: ['Python', 'Django', 'LDAP', 'Active Directory', 'React'],
+    liveLink: 'https://vzure.com/',
+    sourceCode: '',
   },
   {
-    className: 'AIBlogGenerator',
-    description:
-      'AI-generated blog posts that summarize YouTube video content, providing concise text summaries to enhance accessibility and content consumption.',
-    stack: ['Python', 'Django', 'Tailwind CSS', 'OpenAI API', 'AssemblyAI'],
-    liveLink: 'https://example.com',
-    sourceCode: 'https://github.com/Abhay-Kanwasi/AI-Blog-Generator',
+    className: 'Finlens',
+    bullets: [
+      'Designed a configurable storage backend supporting both local and Google Cloud Storage, enforcing AES-256 encryption with customer-supplied keys for all uploaded files.',
+      'Separated and migrated compute-heavy tasks from the core app to Google Cloud, deploying via Cloud Run or Artifact Registry with Docker, based on OS dependencies.',
+    ],
+    stack: ['Python', 'Django', 'Google Cloud Storage', 'Cloud Run', 'Docker', 'Cloud Functions'],
+    liveLink: 'https://finlens.hobbiate.com/',
+    sourceCode: '',
   },
   {
-    className: 'MovieRecommender',
-    description:
-      'Preprocesses movie data, vectorizes text using Bag of Words, and calculates cosine distances to recommend the top 5 similar movies.',
-    stack: ['Python', 'Pandas', 'Sklearn', 'Streamlit', 'NLTK'],
-    liveLink: 'https://example.com',
-    sourceCode:
-      'https://github.com/Abhay-Kanwasi/ML-Learning/tree/main/Projects/Movie%20Recommender%20System',
+    className: 'S3Drive',
+    bullets: [
+      'Architected and deployed a multi-tenant S3 file management platform that enables organizations to browse, upload, download, preview, restore, and govern files across org-scoped AWS S3 buckets through a secure web interface.',
+      'Built a secure backend layer between the UI and AWS S3/PostgreSQL, enforcing group-based folder permissions, role-based access control, soft-delete recycle bin workflows, and S3-backed audit logging for enterprise-grade file governance.',
+      'Implemented approval-driven admin workflows for sensitive operations such as group deletion and org offboarding, along with in-browser preview support for CSV, XLSX, Parquet, and JSON files using paginated server-side parsing and caching.',
+    ],
+    stack: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'AWS S3', 'boto3', 'JWT', 'Next.js', 'React.js', 'Tailwind CSS', 'React Query', 'Docker', 'AWS ECS', 'AWS ECR', 'GitHub Actions', 'pandas', 'pyarrow'],
+    liveLink: '',
+    sourceCode: '',
   },
   {
-    className: 'Puddle',
-    description:
-      'Online marketplace with secure authentication, product management, efficient search, and an intuitive messaging system.',
-    stack: ['Python', 'Django', 'Tailwind CSS', 'JavaScript'],
-    liveLink: 'https://example.com',
-    sourceCode: 'https://github.com/Abhay-Kanwasi/Puddle',
+    className: 'ForecastingAgent',
+    bullets: [
+      'Architected and deployed a conversational forecasting platform that enables users to submit natural-language demand planning queries and receive interactive Plotly visualizations, structured insights, and downloadable Excel outputs.',
+      'Built a Claude-powered tool-calling pipeline that transforms user prompts into forecasting inputs, orchestrates S3-backed data preparation and external model execution, and supports scalable async processing through job workers, polling, cancellation, and AWS AgentCore integration.',
+      'Implemented editable, branch-based conversation workflows with chat_id, conversation_id, version switching, and revision handling to support iterative forecasting and what-if analysis.',
+    ],
+    stack: ['Python', 'FastAPI', 'MongoDB', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS AgentCore', 'Anthropic Claude', 'Amazon Bedrock', 'Plotly', 'Docker', 'Langfuse'],
+    liveLink: '',
+    sourceCode: '',
   },
   {
-    className: 'WeatherApp',
-    description:
-      'A weather comparison app built with Django and the OpenWeather API. Compare real-time weather data between two cities.',
-    stack: ['Python', 'Django', 'Tailwind CSS', 'JavaScript'],
-    liveLink: 'https://example.com',
-    sourceCode: 'https://github.com/Abhay-Kanwasi/Wether-Application',
+    className: 'RAAgent',
+    bullets: [
+      'Architected and deployed a LangGraph-based research analytics agent that allows users to query marketing and ROI datasets through natural language and receive streamed insights, interactive charts, Excel analyses, and markdown reports.',
+      'Engineered a dual-path data workflow supporting both user-uploaded CSV/Excel files and governed RROI brand datasets, combining JWT-based access control, S3/Parquet artifact handling, and multi-step LLM orchestration with real-time SSE progress streaming.',
+      'Developed a structured analytics workflow for code generation, execution, plot generation, insight synthesis, and report creation, enabling end-to-end research automation from raw data to business-ready outputs.',
+    ],
+    stack: ['Python', 'FastAPI', 'LangGraph', 'MongoDB', 'PostgreSQL', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS ECS', 'Claude', 'Gemini', 'Plotly', 'SSE', 'Docker', 'Langfuse'],
+    liveLink: '',
+    sourceCode: '',
   },
   {
-    className: 'ShoppinglyX',
-    description:
-      'Full-stack e-commerce platform with user authentication, product listings, shopping cart, and order placement.',
-    stack: ['Python', 'Django', 'Tailwind CSS', 'JavaScript'],
-    liveLink: 'https://example.com',
-    sourceCode: 'https://github.com/Abhay-Kanwasi/Full-stack-Ecommerce-Website/',
+    className: 'AIQuarium',
+    bullets: [
+      'Architected and deployed a full-stack AI platform hosting multiple NLP tools — Text Summarizer, parameterized Blog Generator (custom topics, tones, and AI providers), and a Groq-powered chat interface with adjustable model, token limit, and temperature settings.',
+      'Seamlessly integrated Hugging Face transformer models alongside the Groq API, dynamically selecting the most effective model per task to maximize accuracy, efficiency, and user-driven customization.',
+    ],
+    stack: ['Python', 'Django', 'Groq API', 'Hugging Face', 'React', 'NLP', 'Machine Learning'],
+    liveLink: '',
+    sourceCode: '',
   },
 ]
 
