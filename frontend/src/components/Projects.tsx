@@ -61,18 +61,20 @@ export default function Projects() {
                   </div>
 
                   <div className="mt-4 flex gap-4 pl-6">
-                    <a
-                      href={project.liveLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-500 transition-colors duration-200 hover:text-cyan-400"
-                    >
-                      <span className="text-cyan-400/70">def</span>{' '}
-                      <span className="transition-colors duration-200 group-hover:text-amber-200">
-                        demo
-                      </span>
-                      <span>(self): ...</span>
-                    </a>
+                    {project.liveLink && !project.liveLink.includes('example.com') && (
+                      <a
+                        href={project.liveLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-500 transition-colors duration-200 hover:text-cyan-400"
+                      >
+                        <span className="text-cyan-400/70">def</span>{' '}
+                        <span className="transition-colors duration-200 group-hover:text-amber-200">
+                          demo
+                        </span>
+                        <span>(self): ...</span>
+                      </a>
+                    )}
                     <a
                       href={project.sourceCode}
                       target="_blank"
