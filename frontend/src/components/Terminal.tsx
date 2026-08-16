@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback, lazy, Suspense } from 'react'
-import { profile, techStack, projects, experiences, articles } from '../data/content'
+import { profile, techStack, projectGroups, projects, experiences, articles } from '../data/content'
 
 const articleComponents: Record<string, React.LazyExoticComponent<React.ComponentType>> = {
   'exception-handling-python': lazy(() => import('./articles/ExceptionHandlingArticle')),
@@ -59,15 +59,35 @@ function buildFS(): FSNode {
     }
   })
 
-  const projectChildren: Record<string, FSNode> = {}
+  const personalProjectChildren: Record<string, FSNode> = {}
   projects.forEach((p) => {
-    projectChildren[p.className] = {
+    personalProjectChildren[p.className] = {
       type: 'dir',
       children: {
         'README.md': { type: 'file', render: () => renderProjectReadme(p) },
       },
     }
   })
+
+  const companyProjectChildren: Record<string, FSNode> = {}
+  projectGroups
+    .filter((group) => group.group !== 'Personal Projects')
+    .forEach((group) => {
+      const companyDir: Record<string, FSNode> = {}
+      group.projects.forEach((project) => {
+        companyDir[project.className] = {
+          type: 'dir',
+          children: {
+            'README.md': { type: 'file', render: () => renderProjectReadme(project) },
+          },
+        }
+      })
+
+      companyProjectChildren[group.group.toLowerCase()] = {
+        type: 'dir',
+        children: companyDir,
+      }
+    })
 
   return {
     type: 'dir',
@@ -77,7 +97,13 @@ function buildFS(): FSNode {
       'experience.log': { type: 'file', render: renderExperience },
       'contact.py': { type: 'file', render: renderContact },
       articles: { type: 'dir', children: articleChildren },
-      projects: { type: 'dir', children: projectChildren },
+      projects: {
+        type: 'dir',
+        children: {
+          personal_projects: { type: 'dir', children: personalProjectChildren },
+          company: { type: 'dir', children: companyProjectChildren },
+        },
+      },
     },
   }
 }

@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion'
-import { projectGroups } from '../data/content'
+import { projects } from '../data/content'
 import SectionReveal from './SectionReveal'
+
+const personalProjectGroups = [{
+  group: 'Personal Projects',
+  projects,
+}]
 
 export default function Projects() {
   return (
@@ -16,7 +21,7 @@ export default function Projects() {
           </p>
         </SectionReveal>
 
-        {projectGroups.map((group) => (
+        {personalProjectGroups.map((group) => (
           <div key={group.group} className="mb-14">
             <SectionReveal>
               <p className="mb-6 font-mono text-xs text-slate-500">
