@@ -9,7 +9,7 @@ const personalProjectGroups = [{
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-6 py-28">
+    <section id="projects" className="px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-5xl">
         <SectionReveal>
           <p className="mb-4 font-mono text-sm text-slate-500">
@@ -34,7 +34,7 @@ export default function Projects() {
               <motion.div
                 whileHover={{ y: -2 }}
                 transition={{ duration: 0.2 }}
-                className="group flex h-full flex-col rounded-lg border border-slate-700/50 bg-slate-800/30 font-mono text-sm transition-all duration-300 hover:border-slate-600"
+                className="group flex h-full min-w-0 flex-col rounded-lg border border-slate-700/50 bg-slate-800/30 font-mono text-sm transition-all duration-300 hover:border-slate-600"
               >
                 {/* Title bar */}
                 <div className="flex items-center gap-2 border-b border-slate-700/40 px-4 py-2.5">
@@ -47,14 +47,14 @@ export default function Projects() {
                 </div>
 
                 {/* Code body */}
-                <div className="flex flex-1 flex-col p-5">
-                  <p>
+                <div className="flex flex-1 flex-col p-4 sm:p-5">
+                  <p className="min-w-0 break-all">
                     <span className="text-cyan-400">class</span>{' '}
                     <span className="text-amber-200">{project.className}</span>
                     <span className="text-slate-500">:</span>
                   </p>
 
-                  <div className="mt-1.5 pl-6">
+                  <div className="mt-1.5 pl-3 sm:pl-6">
                     <p className="text-emerald-400/80">"""</p>
                     <ul className="list-none space-y-1.5">
                       {project.bullets.map((bullet, j) => (
@@ -67,7 +67,7 @@ export default function Projects() {
                     <p className="text-emerald-400/80">"""</p>
                   </div>
 
-                  <div className="mt-auto pt-3 pl-6">
+                  <div className="mt-auto pt-3 pl-3 sm:pl-6">
                     <span className="text-slate-300">stack</span>
                     <span className="text-slate-500"> = </span>
                     <span className="text-slate-500">[</span>
@@ -78,7 +78,7 @@ export default function Projects() {
                   </div>
 
                   {(project.liveLink || project.sourceCode) && (
-                    <div className="mt-4 flex gap-4 pl-6">
+                    <div className="mt-4 flex flex-wrap gap-4 pl-3 sm:pl-6">
                       {project.liveLink && (
                         <a
                           href={project.liveLink}

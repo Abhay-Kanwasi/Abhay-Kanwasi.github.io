@@ -2,8 +2,8 @@ import { profile } from '../data/content'
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-700/40 px-6 py-3">
-      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 font-mono text-xs text-slate-600 sm:flex-row">
+    <footer className="border-t border-slate-700/40 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-2 font-mono text-[10px] text-slate-600 sm:flex-row sm:text-xs">
         <span>&copy; {new Date().getFullYear()} Abhay Kanwasi</span>
         <div className="flex items-center gap-4">
           <span className="hidden text-emerald-400/60 sm:inline">Python</span>

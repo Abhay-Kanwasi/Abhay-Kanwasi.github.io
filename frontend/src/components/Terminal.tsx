@@ -142,14 +142,14 @@ function promptPath(cwd: string[]): string {
 
 function Prompt({ cwd }: { cwd: string[] }) {
   return (
-    <>
+    <span className="inline-flex min-w-0 flex-wrap items-center gap-0.5 whitespace-pre-wrap break-all">
       <span className="text-emerald-400">abhay</span>
       <span className="text-slate-600">@</span>
       <span className="text-cyan-400">dev</span>
       <span className="text-slate-600">:</span>
       <span className="text-blue-400">{promptPath(cwd)}</span>
-      <span className="text-slate-600">$&nbsp;</span>
-    </>
+      <span className="text-slate-600">$</span>
+    </span>
   )
 }
 
@@ -706,7 +706,7 @@ export default function Terminal({ onSwitchToGui }: { onSwitchToGui: () => void 
   return (
     <div className={`flex min-h-screen items-center justify-center transition-all duration-300 ${maximized ? 'p-0' : 'p-2 sm:p-6'}`}>
       <div
-        className={`flex w-full flex-col overflow-hidden bg-[#0d1117] transition-all duration-300 ${
+        className={`flex w-full max-w-[calc(100vw-0.5rem)] flex-col overflow-hidden bg-[#0d1117] transition-all duration-300 ${
           maximized
             ? 'h-screen max-w-none rounded-none border-0'
             : 'h-[95vh] max-w-4xl rounded-lg border border-slate-700/50 shadow-2xl shadow-black/50 sm:h-[85vh] sm:rounded-xl'
@@ -714,7 +714,7 @@ export default function Terminal({ onSwitchToGui }: { onSwitchToGui: () => void 
         onClick={() => inputRef.current?.focus()}
       >
         {/* Title bar */}
-        <div className="flex shrink-0 items-center justify-between border-b border-slate-700/40 px-4 py-2.5">
+        <div className="flex shrink-0 items-center justify-between gap-2 border-b border-slate-700/40 px-3 py-2 sm:px-4 sm:py-2.5">
           <div className="flex items-center gap-2">
             <button
               onClick={(e) => {
@@ -746,7 +746,7 @@ export default function Terminal({ onSwitchToGui }: { onSwitchToGui: () => void 
             >
               <span className="absolute inset-0 flex items-center justify-center text-[8px] font-bold leading-none text-transparent group-hover:text-emerald-900">+</span>
             </button>
-            <span className="ml-3 font-mono text-xs text-slate-500">
+            <span className="ml-2 truncate font-mono text-[10px] text-slate-500 sm:ml-3 sm:text-xs">
               abhay@dev: {promptPath(cwd)}
             </span>
           </div>
@@ -755,15 +755,15 @@ export default function Terminal({ onSwitchToGui }: { onSwitchToGui: () => void 
               e.stopPropagation()
               onSwitchToGui()
             }}
-            className="rounded border border-slate-700/50 px-2.5 py-1 font-mono text-xs text-slate-500 transition-colors hover:border-slate-600 hover:text-slate-300"
+            className="rounded border border-slate-700/50 px-2 py-1 font-mono text-[10px] text-slate-500 transition-colors hover:border-slate-600 hover:text-slate-300 sm:px-2.5 sm:text-xs"
           >
             gui mode
           </button>
         </div>
 
         {/* Terminal body */}
-        <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 sm:px-6">
-          <div className="font-mono text-sm leading-relaxed">
+        <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 py-3 sm:px-6 sm:py-4">
+          <div className="font-mono text-[11px] leading-relaxed sm:text-sm">
             {lines.map((line) => (
               <div key={line.id} className={line.type === 'output' ? 'mb-4 mt-1' : ''}>
                 {line.type === 'input' ? (
@@ -778,8 +778,10 @@ export default function Terminal({ onSwitchToGui }: { onSwitchToGui: () => void 
             ))}
 
             {/* Active input */}
-            <div className="flex items-center">
-              <Prompt cwd={cwd} />
+            <div className="flex min-w-0 items-center gap-1">
+              <div className="min-w-0 shrink-0">
+                <Prompt cwd={cwd} />
+              </div>
               <input
                 ref={inputRef}
                 value={input}

@@ -57,7 +57,7 @@ export default function Articles() {
   if (selectedSlug) {
     if (loading) {
       return (
-        <section id="articles" className="px-6 py-28">
+        <section id="articles" className="px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl">
             <p className="font-mono text-sm text-slate-500">loading...</p>
           </div>
@@ -69,7 +69,7 @@ export default function Articles() {
     const HardcodedComponent = articleComponents[selectedSlug]
     if (HardcodedComponent) {
       return (
-        <section id="articles" className="px-6 py-28">
+        <section id="articles" className="px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl">
             <button
               onClick={closeArticle}
@@ -97,7 +97,7 @@ export default function Articles() {
 
     if (!selectedArticle) {
       return (
-        <section id="articles" className="px-6 py-28">
+        <section id="articles" className="px-4 py-20 sm:px-6 sm:py-28">
           <div className="mx-auto max-w-3xl">
             <p className="mb-4 font-mono text-sm text-slate-400">
               This article is no longer in the latest feed.
@@ -123,7 +123,7 @@ export default function Articles() {
       : ''
 
     return (
-      <section id="articles" className="px-6 py-28">
+      <section id="articles" className="px-4 py-20 sm:px-6 sm:py-28">
         <div className="mx-auto max-w-3xl">
           <button
             onClick={closeArticle}
@@ -134,7 +134,7 @@ export default function Articles() {
           </button>
           <article className="mx-auto max-w-3xl">
             <p className="mb-3 font-mono text-sm text-slate-600">{pubDate}</p>
-            <h1 className="mb-6 text-2xl font-bold tracking-tight text-slate-100 md:text-3xl">
+            <h1 className="mb-6 text-xl font-bold tracking-tight text-slate-100 sm:text-2xl md:text-3xl">
               {selectedArticle.title}
             </h1>
             <div className="mb-10 flex items-center gap-3">
@@ -164,7 +164,7 @@ export default function Articles() {
   }
 
   return (
-    <section id="articles" className="px-6 py-28">
+    <section id="articles" className="px-4 py-20 sm:px-6 sm:py-28">
       <div className="mx-auto max-w-3xl">
         <AnimatePresence mode="wait">
           <motion.div

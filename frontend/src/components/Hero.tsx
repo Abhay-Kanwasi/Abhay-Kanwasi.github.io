@@ -41,7 +41,7 @@ export default function Hero() {
   }, [onTypingDone])
 
   return (
-    <section id="whoami" className="flex min-h-screen items-center px-6 pt-14">
+    <section id="whoami" className="flex min-h-screen items-center px-4 pt-16 sm:px-6 sm:pt-14">
       <div className="mx-auto w-full max-w-3xl">
         <motion.div
           initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ export default function Hero() {
         </motion.div>
 
         <div className="font-mono">
-          <h1 className="mb-2 text-4xl font-bold tracking-tight text-slate-100 md:text-5xl">
+          <h1 className="mb-2 text-3xl font-bold tracking-tight text-slate-100 sm:text-4xl md:text-5xl">
             {displayed}
             <span
               className={`ml-0.5 inline-block w-[3px] bg-cyan-400 align-middle ${done ? 'animate-blink' : ''}`}

@@ -19,9 +19,9 @@ export default function App() {
 
   return (
     <ArticlesProvider>
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen overflow-x-hidden">
       <Navbar onSwitchToTerminal={() => setMode('terminal')} />
-      <main>
+      <main className="overflow-x-hidden">
         <Hero />
         <TechStack />
         <Projects />
