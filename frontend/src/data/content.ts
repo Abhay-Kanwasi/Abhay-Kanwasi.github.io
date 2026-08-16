@@ -42,69 +42,97 @@ export const techStack = [
   },
 ]
 
-export const projects = [
+export const projectGroups = [
   {
-    className: 'VzureInnovationAccelerator',
-    bullets: [
-      'Built a secure upgrade system with signature validation, decryption, and automated application upgrade.',
-      'Integrated LDAP and Active Directory authentication with configurable settings, real-time connection testing, and comprehensive frontend and backend test cases.',
+    group: 'Hobbiate',
+    projects: [
+      {
+        className: 'VzureInnovationAccelerator',
+        bullets: [
+          'Built a secure upgrade system with signature validation, decryption, and automated application upgrade.',
+          'Integrated LDAP and Active Directory authentication with configurable settings, real-time connection testing, and comprehensive frontend and backend test cases.',
+          'Built an in-app version upgrade and SSL management system for a hospital software platform — enabling admins to upload version packages (tar.gz), view upgrade details with guided instructions, resume interrupted upgrades via status tracking (file_saved/upgrade_proceed/completed/failed), and securely upload and configure SSL certificates through a dedicated settings module.',
+        ],
+        stack: ['Python', 'Django', 'DRF', 'React', 'LDAP', 'Active Directory'],
+        liveLink: 'https://vzure.com/',
+        sourceCode: '',
+      },
+      {
+        className: 'PatientReferralSystem',
+        bullets: [
+          'Architected and developed a hospital patient referral system that streamlined critical patient transfers between hospitals through real-time doctor availability tracking and a responsive call center workflow.',
+          'Designed role-based access control and end-to-end database architecture covering location, hospital, case, and call center modules, along with bulk CSV upload/download pipelines for hospitals, staff, and master data.',
+          'Led feature development and mentored interns, delivering mobile UI improvements (profile, hospital profile, password change flows) while reviewing pull requests and enforcing code quality standards.',
+        ],
+        stack: ['Python', 'Django', 'DRF', 'React', 'TypeScript', 'PostgreSQL'],
+        liveLink: '',
+        sourceCode: '',
+      },
+      {
+        className: 'Finlens',
+        bullets: [
+          'Designed a configurable storage backend supporting both local and Google Cloud Storage, enforcing AES-256 encryption with customer-supplied keys for all uploaded files.',
+          'Separated and migrated compute-heavy tasks from the core app to Google Cloud, deploying via Cloud Run or Artifact Registry with Docker, based on OS dependencies.',
+          'Done POC and implemented streamlined PDF processing with Google Cloud Vision API in batch processing.',
+        ],
+        stack: ['Python', 'Django', 'Google Cloud Storage', 'Cloud Run', 'Docker', 'Cloud Functions', 'Google Vision API'],
+        liveLink: 'https://finlens.hobbiate.com/',
+        sourceCode: '',
+      },
     ],
-    stack: ['Python', 'Django', 'LDAP', 'Active Directory', 'React'],
-    liveLink: 'https://vzure.com/',
-    sourceCode: '',
   },
   {
-    className: 'Finlens',
-    bullets: [
-      'Designed a configurable storage backend supporting both local and Google Cloud Storage, enforcing AES-256 encryption with customer-supplied keys for all uploaded files.',
-      'Separated and migrated compute-heavy tasks from the core app to Google Cloud, deploying via Cloud Run or Artifact Registry with Docker, based on OS dependencies.',
+    group: 'Personal Projects',
+    projects: [
+      {
+        className: 'AIQuarium',
+        bullets: [
+          'Architected and deployed a full-stack AI platform hosting multiple NLP tools — Text Summarizer, parameterized Blog Generator (custom topics, tones, and AI providers), and a Groq-powered chat interface with adjustable model, token limit, and temperature settings.',
+          'Seamlessly integrated Hugging Face transformer models alongside the Groq API, dynamically selecting the most effective model per task to maximize accuracy, efficiency, and user-driven customization.',
+        ],
+        stack: ['Python', 'Django', 'Groq API', 'Hugging Face', 'React', 'NLP', 'Machine Learning'],
+        liveLink: '',
+        sourceCode: '',
+      },
+      {
+        className: 'S3Drive',
+        bullets: [
+          'Architected and deployed a multi-tenant S3 file management platform that enables organizations to browse, upload, download, preview, restore, and govern files across org-scoped AWS S3 buckets through a secure web interface.',
+          'Built a secure backend layer between the UI and AWS S3/PostgreSQL, enforcing group-based folder permissions, role-based access control, soft-delete recycle bin workflows, and S3-backed audit logging for enterprise-grade file governance.',
+          'Implemented approval-driven admin workflows for sensitive operations such as group deletion and org offboarding, along with in-browser preview support for CSV, XLSX, Parquet, and JSON files using paginated server-side parsing and caching.',
+        ],
+        stack: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'AWS S3', 'boto3', 'JWT', 'Next.js', 'React.js', 'Tailwind CSS', 'React Query', 'Docker', 'AWS ECS', 'AWS ECR', 'GitHub Actions', 'pandas', 'pyarrow'],
+        liveLink: '',
+        sourceCode: '',
+      },
     ],
-    stack: ['Python', 'Django', 'Google Cloud Storage', 'Cloud Run', 'Docker', 'Cloud Functions'],
-    liveLink: 'https://finlens.hobbiate.com/',
-    sourceCode: '',
   },
   {
-    className: 'S3Drive',
-    bullets: [
-      'Architected and deployed a multi-tenant S3 file management platform that enables organizations to browse, upload, download, preview, restore, and govern files across org-scoped AWS S3 buckets through a secure web interface.',
-      'Built a secure backend layer between the UI and AWS S3/PostgreSQL, enforcing group-based folder permissions, role-based access control, soft-delete recycle bin workflows, and S3-backed audit logging for enterprise-grade file governance.',
-      'Implemented approval-driven admin workflows for sensitive operations such as group deletion and org offboarding, along with in-browser preview support for CSV, XLSX, Parquet, and JSON files using paginated server-side parsing and caching.',
+    group: 'WagerGeeks',
+    projects: [
+      {
+        className: 'ForecastingAgent',
+        bullets: [
+          'Architected and deployed a conversational forecasting platform that enables users to submit natural-language demand planning queries and receive interactive Plotly visualizations, structured insights, and downloadable Excel outputs.',
+          'Built a Claude-powered tool-calling pipeline that transforms user prompts into forecasting inputs, orchestrates S3-backed data preparation and external model execution, and supports scalable async processing through job workers, polling, cancellation, and AWS AgentCore integration.',
+          'Implemented editable, branch-based conversation workflows with chat_id, conversation_id, version switching, and revision handling to support iterative forecasting and what-if analysis.',
+        ],
+        stack: ['Python', 'FastAPI', 'MongoDB', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS AgentCore', 'Anthropic Claude', 'Amazon Bedrock', 'Plotly', 'Docker', 'Langfuse'],
+        liveLink: '',
+        sourceCode: '',
+      },
+      {
+        className: 'RAAgent',
+        bullets: [
+          'Architected and deployed a LangGraph-based research analytics agent that allows users to query marketing and ROI datasets through natural language and receive streamed insights, interactive charts, Excel analyses, and markdown reports.',
+          'Engineered a dual-path data workflow supporting both user-uploaded CSV/Excel files and governed RROI brand datasets, combining JWT-based access control, S3/Parquet artifact handling, and multi-step LLM orchestration with real-time SSE progress streaming.',
+          'Developed a structured analytics workflow for code generation, execution, plot generation, insight synthesis, and report creation, enabling end-to-end research automation from raw data to business-ready outputs.',
+        ],
+        stack: ['Python', 'FastAPI', 'LangGraph', 'MongoDB', 'PostgreSQL', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS ECS', 'Claude', 'Gemini', 'Plotly', 'SSE', 'Docker', 'Langfuse'],
+        liveLink: '',
+        sourceCode: '',
+      },
     ],
-    stack: ['Python', 'FastAPI', 'SQLAlchemy', 'PostgreSQL', 'AWS S3', 'boto3', 'JWT', 'Next.js', 'React.js', 'Tailwind CSS', 'React Query', 'Docker', 'AWS ECS', 'AWS ECR', 'GitHub Actions', 'pandas', 'pyarrow'],
-    liveLink: '',
-    sourceCode: '',
-  },
-  {
-    className: 'ForecastingAgent',
-    bullets: [
-      'Architected and deployed a conversational forecasting platform that enables users to submit natural-language demand planning queries and receive interactive Plotly visualizations, structured insights, and downloadable Excel outputs.',
-      'Built a Claude-powered tool-calling pipeline that transforms user prompts into forecasting inputs, orchestrates S3-backed data preparation and external model execution, and supports scalable async processing through job workers, polling, cancellation, and AWS AgentCore integration.',
-      'Implemented editable, branch-based conversation workflows with chat_id, conversation_id, version switching, and revision handling to support iterative forecasting and what-if analysis.',
-    ],
-    stack: ['Python', 'FastAPI', 'MongoDB', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS AgentCore', 'Anthropic Claude', 'Amazon Bedrock', 'Plotly', 'Docker', 'Langfuse'],
-    liveLink: '',
-    sourceCode: '',
-  },
-  {
-    className: 'RAAgent',
-    bullets: [
-      'Architected and deployed a LangGraph-based research analytics agent that allows users to query marketing and ROI datasets through natural language and receive streamed insights, interactive charts, Excel analyses, and markdown reports.',
-      'Engineered a dual-path data workflow supporting both user-uploaded CSV/Excel files and governed RROI brand datasets, combining JWT-based access control, S3/Parquet artifact handling, and multi-step LLM orchestration with real-time SSE progress streaming.',
-      'Developed a structured analytics workflow for code generation, execution, plot generation, insight synthesis, and report creation, enabling end-to-end research automation from raw data to business-ready outputs.',
-    ],
-    stack: ['Python', 'FastAPI', 'LangGraph', 'MongoDB', 'PostgreSQL', 'Next.js', 'React.js', 'Redux Toolkit', 'AWS S3', 'AWS ECS', 'Claude', 'Gemini', 'Plotly', 'SSE', 'Docker', 'Langfuse'],
-    liveLink: '',
-    sourceCode: '',
-  },
-  {
-    className: 'AIQuarium',
-    bullets: [
-      'Architected and deployed a full-stack AI platform hosting multiple NLP tools — Text Summarizer, parameterized Blog Generator (custom topics, tones, and AI providers), and a Groq-powered chat interface with adjustable model, token limit, and temperature settings.',
-      'Seamlessly integrated Hugging Face transformer models alongside the Groq API, dynamically selecting the most effective model per task to maximize accuracy, efficiency, and user-driven customization.',
-    ],
-    stack: ['Python', 'Django', 'Groq API', 'Hugging Face', 'React', 'NLP', 'Machine Learning'],
-    liveLink: '',
-    sourceCode: '',
   },
 ]
 

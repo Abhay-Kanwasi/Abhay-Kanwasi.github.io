@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { projects } from '../data/content'
+import { projectGroups } from '../data/content'
 import SectionReveal from './SectionReveal'
 
 export default function Projects() {
@@ -16,8 +16,15 @@ export default function Projects() {
           </p>
         </SectionReveal>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {projects.map((project, i) => (
+        {projectGroups.map((group) => (
+          <div key={group.group} className="mb-14">
+            <SectionReveal>
+              <p className="mb-6 font-mono text-xs text-slate-500">
+                <span className="text-emerald-400">~/</span>{group.group.toLowerCase().replace(' ', '_')}
+              </p>
+            </SectionReveal>
+            <div className="grid gap-5 md:grid-cols-2">
+          {group.projects.map((project, i) => (
             <SectionReveal key={project.className} delay={i * 0.08} className="h-full">
               <motion.div
                 whileHover={{ y: -2 }}
@@ -97,7 +104,9 @@ export default function Projects() {
               </motion.div>
             </SectionReveal>
           ))}
-        </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   )
