@@ -95,7 +95,7 @@ export const projectGroups = [
           'Seamlessly integrated Hugging Face transformer models alongside the Groq API, dynamically selecting the most effective model per task to maximize accuracy, efficiency, and user-driven customization.',
         ],
         stack: ['Python', 'Django', 'Groq API', 'Hugging Face', 'React', 'NLP', 'Machine Learning'],
-        liveLink: '',
+        liveLink: 'https://ai-quarium-ten.vercel.app/',
         sourceCode: '',
       },
       {
